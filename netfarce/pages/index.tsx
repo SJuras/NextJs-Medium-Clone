@@ -11,13 +11,14 @@ export default function Home() {
 
       <Header />
 
-      <div className="flex flex-col md:flex-row justify-around items-center bg-yellow-400 border-y border-black py-14">
-        <div className="px-6 space-y-5">
+      <div className="flex flex-col md:flex-row justify-around items-center bg-zinc-900 border-y border-black py-14">
+        <div className="px-10 space-y-5">
 
         </div>
         <div className="px-10 space-y-5">
-          <h1 className="text-center text-5xl md:text-left md:text-6xl max-w-xl font-Lustra font-bold">NETFARCE</h1>
-          <h2 className="text-3xl max-w-xl font-Lustra font-bold">CyberSecurity, Blockchain, Crypto, Neural Networks</h2>
+          <h1 className="text-center text-5xl md:text-left md:text-6xl max-w-xl font-Lustra font-bold text-slate-50">NETFARCE</h1>
+          <h2 className="text-3xl max-w-xl font-Lustra font-medium text-slate-50">CyberSecurity, Blockchain, Crypto, Neural Networks</h2>
+          <h4 className="text-slate-50 font-Lustra">Blog for learning latest tech</h4>
         </div>
       </div>
 
