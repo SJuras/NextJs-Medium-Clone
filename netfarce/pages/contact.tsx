@@ -1,16 +1,42 @@
 import Head from 'next/head'
 import Header from '../components/Header';
+import Dropdown from '../components/Dropdown';
+
+import { useState, useEffect } from 'react';
+
 
 export default function About() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  }
+
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+    const formData = {};
+    Array.from(e.currentTarget.elements).forEach(field => {
+      if ( !field.name ) return;
+      formData[field.name] = field.value;
+    });
+    fetch('/api/mail', {
+      method: 'post',
+      body: JSON.stringify(formData)
+    })
+    console.log(formData);
+  }
+
   return(
     <div className="bg-zinc-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-20">
       <Head>
         <title>Contact NetFarce | Tech Learning Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header toggle={toggle} />
+      <Dropdown isOpen={isOpen} toggle={toggle} />
 
       <div className="px-10 flex justify-center items-center flex-col py-14">
         <div className="py-10">
@@ -18,11 +44,12 @@ export default function About() {
         </div>
 
         {/* contact form */}
-        <form className="w-full md:w-3/4 bg-zinc-800 p-4">
+        <form method="post" onSubmit={handleOnSubmit} className="w-full md:w-3/4 bg-zinc-800 p-4">
           <div className="w-full mb-6">
             <input
               type="text"
               name="name"
+
               className="text-white w-full p-2 bg-zinc-800 border-b-2 border-blue-600 outline-none transition duration-300 focus:border-red-600"
               placeholder="Your Name"
             />
@@ -31,6 +58,7 @@ export default function About() {
             <input
               type="email"
               name="email"
+
               className="text-white w-full p-2 bg-zinc-800 border-b-2 border-blue-600 outline-none transition duration-300 focus:border-red-600"
               placeholder="Your Email"
             />
@@ -39,12 +67,14 @@ export default function About() {
             <input
               type="text"
               name="subject"
+
               className="text-white w-full p-2 bg-zinc-800 border-b-2 border-blue-600 outline-none transition duration-300 focus:border-red-600"
               placeholder="Subject"
             />
           </div>
           <div className="w-full mb-4">
             <textarea
+              name="message"
               className="text-white w-full p-2 resize-none h-64 bg-zinc-800 border-2 border-blue-600 outline-none transition duration-300 focus:border-red-600"
               placeholder="Your Message"
             >
@@ -57,10 +87,7 @@ export default function About() {
             Send
           </button>
         </form>
-
-
       </div>
-
     </div>
   </div>
   );

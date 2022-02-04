@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import Header from '../components/Header';
 
+import Dropdown from '../components/Dropdown';
+
+import { useState, useEffect } from 'react';
+
+
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -8,15 +13,23 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaLink } from "react-icons/fa";
 
 export default function About() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  }
+
   return(
     <div className="bg-zinc-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-20">
       <Head>
         <title>About NetFarce | Tech Learning Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header toggle={toggle} />
+      <Dropdown isOpen={isOpen} toggle={toggle} />
 
       <div className="px-10 flex justify-center items-center flex-col py-14">
         <div className="py-10">
