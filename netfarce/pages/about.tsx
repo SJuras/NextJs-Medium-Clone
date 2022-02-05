@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header';
-
 import Dropdown from '../components/Dropdown';
+import Footer from '../components/Footer';
 
 import { useState, useEffect } from 'react';
 
@@ -92,6 +92,7 @@ export default function About() {
 
       </div>
 
+      <Footer />
     </div>
   </div>
   );
