@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 
 function Header({isOpen, toggle}){
   return(
-    <header className="flex p-5 fixed top-0 w-full max-w-7xl mx-auto">
+    <header className="flex p-5 fixed top-0 w-full max-w-7xl mx-auto bg-zinc-900">
       <div className="flex w-full justify-between items-center space-x-5">
         <Link href="/">
           <img className="w-44 object-contain cursor-pointer" src="/images/netfarceTitle.png" alt="logo" />

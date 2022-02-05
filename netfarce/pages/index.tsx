@@ -28,7 +28,7 @@ export default function Home() {
           <div className="w-full md:w-3/6 px-10 space-y-5 flex justify-center py-6 md:py-0">
             <img className="w-3/5 object-contain" src="/images/netfarceLogo.png" alt="net farce logo" />
           </div>
-          <div className="w-full md:w-3/6 px-10 space-y-5">
+          <div className="w-full md:w-3/6 px-2 md:px-10 space-y-5">
             <h1 className="text-center text-5xl md:text-left md:text-6xl max-w-xl font-Lustra font-bold text-slate-50 tracking-wide">NETFARCE</h1>
             <h2 className="text-center md:text-left text-3xl max-w-xl font-Lustra font-medium text-slate-50">CyberSecurity, Blockchain, Crypto, Neural Networks</h2>
             <h3 className="text-center md:text-left text-xl text-slate-50 font-Lustra">Blog for learning latest tech</h3>
