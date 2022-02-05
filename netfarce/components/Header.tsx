@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 import { FaBars } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
-function Header({toggle}){
+function Header({isOpen, toggle}){
   return(
     <header className="flex p-5 fixed top-0 w-full max-w-7xl mx-auto">
       <div className="flex w-full justify-between items-center space-x-5">
@@ -17,7 +18,7 @@ function Header({toggle}){
           <h3 className="border px-4 py-1 rounded-full border-red-600 cursor-pointer font-Lustra text-red-600 transition duration-300 hover:text-slate-50 hover:bg-red-600">Get Started</h3>
         </div>
         <button onClick={toggle} className="block md:hidden p-3">
-          <FaBars className="text-white text-2xl cursor-pointer" />
+          {isOpen ? <FaTimes className="text-white text-2xl cursor-pointer" /> : <FaBars className="text-white text-2xl cursor-pointer" /> }
         </button>
       </div>
     </header>

@@ -21,7 +21,7 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header toggle={toggle} />
+        <Header isOpen={isOpen} toggle={toggle} />
         <Dropdown isOpen={isOpen} toggle={toggle} />
 
         <div className="flex flex-col md:flex-row justify-around items-center bg-zinc-800 border-y border-black py-14">

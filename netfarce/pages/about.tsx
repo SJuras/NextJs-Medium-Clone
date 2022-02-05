@@ -28,7 +28,7 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header toggle={toggle} />
+      <Header isOpen={isOpen} toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
 
       <div className="px-10 flex justify-center items-center flex-col py-14">
